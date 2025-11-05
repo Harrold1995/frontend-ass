@@ -1,0 +1,282 @@
+/* ===========================================================
+   FRONTEND ASSIGNMENT — STYLE.CSS
+   Author: Harrold Van Martinez
+   =========================================================== */
+
+/* ===== Base setup ===== */
+html { background:#fff; }
+
+body{
+  background:#0e4a46;
+  margin: 10px 50px 10px 50px !important;
+
+
+  min-height: calc(100vh - 20px);
+  padding: 0;
+  color:#eaf6f4;
+  font:16px/1.45 system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+
+
+/* ===== Container layout ===== */
+.container,
+.page .layout,
+.site-footer .container-1280 {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ===== Fixed logo tile ===== */
+.logo-fixed {
+  position: fixed;
+  top: 24px;
+  left: 48px;
+  width: 100px;
+  height: 64px;
+  z-index: 60;
+  background: #fff;
+  color: #0f4b47;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 767.98px) {
+  .logo-fixed {
+    display: none;
+  }
+}
+
+
+/* ===== Header navigation ===== */
+.site-header {
+  background: #0f4b47;
+  border-bottom: 2px solid #0d423f;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+.site-header .container {
+  padding: 0 22px;
+}
+.nav {
+  padding: 16px 0;
+}
+.nav__list {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__list .btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: #1f6f69;
+  color: #ecf7f6;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 2px 0 #0a3a37;
+  transition: background 0.2s ease;
+}
+.nav__list .btn:hover {
+  background: #25847d;
+}
+
+/* ===== Dropdown ===== */
+.has-dropdown {
+  position: relative;
+}
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 6px;
+  min-width: 220px;
+  padding: 6px 0;
+  list-style: none;
+  background: #2a7e78;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  z-index: 50;
+}
+.has-dropdown .dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  color: #ecf7f6;
+  text-decoration: none;
+}
+.has-dropdown .dropdown li a:hover {
+  background: #339189;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .has-dropdown:hover .dropdown {
+    display: block;
+  }
+}
+
+/* ===== Main layout ===== */
+.page {
+  margin-top: 18px;
+  padding: 0 22px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 18px;
+}
+@media (max-width: 991.98px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Panels ===== */
+.panel {
+  background: #0e3f3b;
+  border: 6px solid #0a2d2a;
+  box-shadow: inset 0 0 0 6px #1f5b57;
+  padding: 18px;
+  border-radius: 4px;
+}
+
+/* ===== Article section ===== */
+.article .page-title {
+  margin: 0 0 12px;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+}
+.article .copy p {
+  margin: 0 0 12px;
+  color: #cfe9e6;
+  text-align: justify;
+  text-indent: 40px;
+  line-height: 1.6;
+}
+
+/* ===== Sidebar ===== */
+.sidebar .box {
+  background: #0e3f3b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.sidebar h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  color: #eaf6f4;
+}
+.sidebar a {
+  color: #bfe2de;
+  text-decoration: underline;
+}
+.sidebar .icons a {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+  background: #2a7e78;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+.sidebar .icons a:hover {
+  background: #339189;
+}
+
+/* ===== Recent Stories image block ===== */
+.recent .thumb {
+  height: 170px;
+  background: url("/asset/images/recent.jpg") center/cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  border-radius: 4px;
+}
+.recent .thumb::after {
+  content: "···";
+  letter-spacing: 0.35em;
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: rgba(234, 246, 244, 0.75);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #0f4b47;
+  border-top: 2px solid #0c3a36;
+  margin-top: 24px;
+}
+.site-footer .container-1280 {
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #cfe9e6;
+}
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+}
+.footer-links a {
+  color: #d9f2ef;
+  text-decoration: underline;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 767.98px) {
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+  .site-header .container,
+  .page,
+  .site-footer .container-1280 {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* logo sits inside the white frame, aligned to the left edge */
+.logo-fixed{
+  position: fixed;
+  top: 24px;          /* same as the white frame top gap */
+  left: 24px;         /* same as the white frame left gap */
+  width: 100px;
+  height: 64px;
+  background:#fff;
+  color:#0f4b47;
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;
+  box-shadow:0 2px 0 rgba(0,0,0,.25);
+  z-index: 60;
+}

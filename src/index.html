@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frontend Assignment</title>
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- OVERRIDES: fix double logo + remove top/bottom white gap -->
+  <style>
+    /* Keep the white frame only on the sides */
+    html { background:#fff; }
+    body {
+      background:#0e4a46;
+      margin: 0 50px !important;     /* no top/bottom white gap */
+      min-height:100vh;
+    }
+
+    /* Hard kill any legacy vertical logo/rail from other CSS files */
+    .logo-rail, .left-rail,
+    a.logo-rail, div.left-rail {
+      display:none !important;
+      width:0 !important; height:0 !important; overflow:hidden !important;
+    }
+
+    /* Single logo tile */
+    .logo-fixed{
+      position: fixed;
+      top:16px;                 /* smaller because top gap is 0 now */
+      left:50px;                /* aligns with the side white frame */
+      width:100px; height:64px;
+      background:#fff; color:#0f4b47;
+      border-radius:4px; font-weight:800;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 2px 0 rgba(0,0,0,.25);
+      z-index:60;
+      text-decoration:none;
+    }
+
+    /* Ensure no accidental gaps come from header/footer */
+    .site-header { margin:0 !important; }
+    .site-footer { margin:0 !important; }
+
+    /* Optional: slight spacing between header and content */
+    .page { margin-top:18px; }
+  </style>
+</head>
+<body>
+
+  <!-- Single fixed white logo tile (no vertical rail) -->
+  <a href="#" class="logo-fixed" aria-label="Home">LOGO</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a class="btn" href="#">Home</a></li>
+          <li><a class="btn" href="#">Sports</a></li>
+          <li><a class="btn" href="#">Casino</a></li>
+          <li class="has-dropdown">
+            <a class="btn" href="#" aria-haspopup="true" aria-expanded="false">Games ▾</a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="#">Mega Moolah</a></li>
+              <li><a href="#">Pirate Pearl</a></li>
+              <li><a href="#">Super Slots</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="page" id="main-content">
+    <div class="layout container">
+      <!-- Left: Article -->
+      <article class="panel article">
+        <h1 class="page-title">Index</h1>
+        <div class="copy">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p> 
+          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p> 
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p> 
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p> <!-- add the rest of your paragraphs here --> </div> 
+        </article>
+      </article>
+
+      <!-- Right: Sidebar -->
+      <aside class="panel sidebar">
+        <section class="box">
+          <h3>SHARE THIS ARTICLE</h3>
+          <div class="icons">
+            <a href="#" aria-label="Email">✉️</a>
+            <a href="#" aria-label="Facebook">✉️</a>
+            <a href="#" aria-label="Twitter">✉️</a>
+            <a href="#" aria-label="LinkedIn">✉️</a>
+          </div>
+        </section>
+
+        <section class="box cats">
+          <h3>ARTICLE CATEGORIES</h3>
+          <ul>
+            <li><a href="#">User Experience (UX)</a></li>
+            <li><a href="#">Redesign</a></li>
+          </ul>
+        </section>
+
+        <section class="box recent">
+          <h3>RECENT STORIES</h3>
+          <div class="thumb"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-1280">
+      <div>2009 - 2017 © Copyright Ltd. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Responsible gaming</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Basic dropdown toggle for mobile
+    document.querySelectorAll('.has-dropdown > a').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const dropdown = btn.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>

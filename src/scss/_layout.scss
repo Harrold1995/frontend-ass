@@ -1,0 +1,60 @@
+.container-1280 { max-width: $container-max; }
+
+body {
+  background: $bg-2;
+  color: $text;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* cards */
+.content-card, .sidebar-card {
+  background: $panel;
+  border: 1px solid $border;
+  border-radius: 4px;
+}
+
+/* title style (px on desktop) */
+.display-title {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Fixed vertical logo (desktop) */
+.fixed-logo {
+  position: fixed; left: 0; top: 0;
+  width: $logo-width; height: 100vh;
+  background: $panel-2; border-right: 1px solid $border;
+  z-index: 1030; text-decoration: none; color: $text; font-weight: 800;
+  display:flex; align-items:center; justify-content:center;
+}
+.fixed-logo span { transform: rotate(-90deg); display:inline-block; letter-spacing: 2px; }
+
+/* push layout on desktop so it doesn't sit under logo */
+@media (min-width: 768px) {
+  .site-header, main, .site-footer { margin-left: $logo-width; }
+}
+
+/* Mobile: switch units to vw/rem as "free interpretation" */
+@media (max-width: 767.98px) {
+  .display-title { font-size: 10vw; }
+  body { font-size: 1rem; }
+}
+
+.page{ padding: 18px 0; }
+.container{ max-width:1280px; margin:0 auto; padding:0 22px; }
+
+.layout{
+  display: grid; gap: 24px;
+  grid-template-columns: minmax(0,1fr) 340px;
+  @media (max-width: 991.98px){ grid-template-columns: 1fr; }
+}
+
+/* Panel frame (double-border look) – content later */
+.panel{
+  background:#0e3f3b;
+  border:6px solid #0a2d2a;
+  box-shadow: inset 0 0 0 6px $ring;
+  min-height: 260px; padding: 18px;
+}

@@ -1,0 +1,12 @@
+@use 'variables';
+@use 'header';
+@use 'layout';
+@use 'sidebar';
+
+body{
+  margin:0;
+  background: variables.$bg;
+  color: variables.$text;
+  font: 16px/1.4 system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+a{ color: inherit; text-decoration: none; }

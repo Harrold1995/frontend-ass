@@ -1,0 +1,122 @@
+.site-header {
+  background: $panel-2;
+  border-bottom: 1px solid $border;
+
+  .navbar-brand { color: $text; font-weight: 800; }
+  .navbar-toggler { filter: invert(1); } /* make icon visible on dark */
+
+  .main-nav .nav-link {
+    color: $text; padding: 14px 16px;
+    &:hover, &:focus { color: $accent; }
+  }
+
+  .dropdown-menu { background: $panel; border: 1px solid $border; }
+  .dropdown-item { color: $text; &:hover { background: $panel-2; color: $accent; } }
+}
+
+/* Mobile accordion-like full-width blocks */
+@media (max-width: 767.98px) {
+  #mainNav .navbar-nav > li { border-top: 1px solid $border; }
+  #mainNav .dropdown-menu { position: static; float: none; display: block; border: 0; padding-left: 12px; }
+}
+
+/* Fixed left logo (desktop) */
+.logo-fixed{
+  position: fixed; left: 18px; top: 18px;
+  width: 92px; height: 64px;
+  background: #fff; color: $bar;
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; letter-spacing: .5px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.25); z-index: 60;
+  @media (max-width: 767.98px){ display:none; }
+}
+
+/* Header bar + nav */
+.site-header{
+  background: $bar;
+  border-bottom: 2px solid darken($bar, 6%);
+  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+
+  .container{ max-width: 1280px; margin: 0 auto; padding: 0 22px; }
+  .nav{ padding: 16px 0; }
+
+  .nav__list{
+    display: flex; gap: 12px; list-style: none; margin: 0; padding: 0;
+    .btn{
+      display: inline-block; padding: 10px 16px; border-radius: 4px;
+      background: $btn; color: #ecf7f6; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      &:hover{ background: $btn-hover; color: #fff; }
+    }
+
+    .has-dropdown{
+      position: relative;
+      .dropdown{
+        display: none; position: absolute; left: 0; top: 100%; margin-top: 6px;
+        min-width: 220px; list-style: none; padding: 6px 0;
+        background: $btn; border: 1px solid rgba(255,255,255,.18); border-radius: 4px;
+        a{ display: block; padding: 10px 14px; color: #ecf7f6; text-decoration: none;
+           &:hover{ background: $btn-hover; color:#fff; } }
+      }
+      @media (min-width: 768px){
+        &:hover .dropdown{ display:block; }
+      }
+    }
+  }
+}
+
+@use 'variables' as v;
+
+/* White fixed logo box (top-left) */
+.logo-fixed{
+  position: fixed; left: 18px; top: 18px;
+  width: 92px; height: 64px; z-index: 60;
+  background: #fff; color: v.$bar; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; letter-spacing: .5px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+  text-decoration: none;
+  @media (max-width: 767.98px){ display:none; }
+}
+
+/* Full-width dark bar like the mock */
+.site-header{
+  background: v.$bar;
+  border-bottom: 2px solid v.$bar-line;
+  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+
+  .container{ max-width: 1280px; margin: 0 auto; padding: 0 22px; }
+  .nav{ padding: 16px 0; }
+
+  .nav__list{
+    list-style: none; margin: 0; padding: 0;
+    display: flex; gap: 12px; align-items: center;
+
+    .btn{
+      display: inline-block; padding: 10px 16px; border-radius: 4px;
+      background: v.$btn; color: #ecf7f6; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      transition: background .15s ease;
+      &:hover{ background: v.$btn-hover; color:#fff; }
+    }
+
+    /* Dropdown */
+    .has-dropdown{ position: relative; }
+    .has-dropdown .dropdown{
+      display: none; position: absolute; left: 0; top: 100%;
+      min-width: 220px; margin-top: 6px; padding: 6px 0;
+      background: v.$btn; border: 1px solid rgba(255,255,255,.18);
+      border-radius: 4px; list-style: none;
+      li a{
+        display: block; padding: 10px 14px; color:#ecf7f6; text-decoration: none;
+        &:hover{ background: v.$btn-hover; color:#fff; }
+      }
+    }
+    @media (min-width: 768px){
+      .has-dropdown:hover .dropdown{ display:block; }
+    }
+  }
+}
+
